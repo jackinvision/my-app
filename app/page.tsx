@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { CheckInButton } from "./components/check-in-button";
 
 interface Particle {
   id: number;
@@ -55,6 +57,44 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-zinc-950 dark:via-black dark:to-indigo-950">
+      {/* 导航栏 */}
+      <nav className="relative z-20 border-b border-zinc-200/50 bg-white/50 backdrop-blur-sm dark:border-zinc-800/50 dark:bg-zinc-900/50">
+        <div className="mx-auto max-w-7xl px-6 py-4">
+          <div className="flex items-center justify-between">
+            <Link
+              href="/"
+              className="flex items-center gap-3 transition-opacity hover:opacity-80"
+            >
+              <Image
+                className="dark:invert"
+                src="/next.svg"
+                alt="Next.js logo"
+                width={120}
+                height={24}
+                priority
+              />
+            </Link>
+            <div className="flex items-center gap-6">
+              <div className="flex gap-6">
+                <Link
+                  href="/"
+                  className="text-sm font-medium text-indigo-600 dark:text-indigo-400"
+                >
+                  首页
+                </Link>
+                <Link
+                  href="/about"
+                  className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+                >
+                  关于
+                </Link>
+              </div>
+              <CheckInButton />
+            </div>
+          </div>
+        </div>
+      </nav>
+
       {/* 背景动画粒子 */}
       {particles.map((particle) => (
         <div
