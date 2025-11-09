@@ -132,6 +132,18 @@ export default function Home() {
             />
           </div>
 
+          {/* 搞笑庆祝图片 */}
+          <div className="mb-6">
+            <Image
+              src="https://media.giphy.com/media/g9582DNuQppxC/giphy.gif"
+              alt="庆祝动图"
+              width={300}
+              height={225}
+              className="rounded-2xl shadow-2xl"
+              unoptimized
+            />
+          </div>
+
           {/* 主标题 */}
           <div className="space-y-4">
             <h1 className="text-5xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-6xl md:text-7xl">
